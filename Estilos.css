@@ -1,0 +1,584 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+/* Estilo para Index */
+.divIndex {
+  padding: 10px 10px 10px 10px;
+  background-color: rgb(0, 0, 0);
+  background-size: cover;
+  background-position: center;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 50px;
+}
+.logo-logo {
+  display: flex;
+  border: solid 3px;
+  border-radius: 10px;
+  border-color: #2d7bea #2d7bea #d23aca #d23aca;
+  animation: girar 1s infinite linear;
+}
+@keyframes girar {
+  0% {
+    border-color: #2d7bea #2d7bea #d23aca #d23aca;
+    transform: translate(10px, 0);
+  }
+  25% {
+    border-color: #d23aca #d23aca #2d7bea #2d7bea;
+    transform: translate(15px, 0);
+  }
+
+  50% {
+    border-color: #2d7bea #2d7bea #d23aca #d23aca;
+    transform: translate(20px, 0);
+    /* filter: blur(3px); */
+  }
+  75% {
+    border-color: #d23aca #d23aca #2d7bea #2d7bea;
+    transform: translate(15px, 0);
+  }
+  100% {
+    border-color: #2d7bea #2d7bea #d23aca #d23aca;
+    transform: translate(10px, 0);
+  }
+}
+.navIndex {
+  /* background-color: rgba(16, 52, 131, 0.667); */
+  border-style: solid;
+  border-color: #2d7bea #2d7bea #d23aca #d23aca;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  font-size: 25px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* #2d7bea, #d23aca */
+.navIndex ul li a {
+  transition: all 0.3s;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+.navIndex ul li a:hover {
+  border-style: solid;
+  border-color: #2d7bea #2d7bea #d23aca #d23aca;
+  border-radius: 10px;
+}
+
+.navIndex ul li {
+  display: inline;
+  word-spacing: 30px;
+  letter-spacing: 2px;
+}
+.navIndex nav a {
+  color: rgb(255, 255, 255);
+  font-family: 'Noto Sans', sans-serif;
+}
+.footer {
+  background-image: linear-gradient(to right, #2d7bea, #d23aca);
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #2d7bea #2d7bea #d23aca #d23aca;
+  animation: footer-animation 3s infinite ease;
+  margin-top: 30px;
+}
+/* @keyframes footer-animation {
+  0% {
+    background-color:#2d7bea;
+  }
+  50% {
+    background-color:#d23aca;
+  }
+  100% {
+    background-color:#2d7bea;
+  }
+} */
+.fas {
+  padding: 0px 15px;
+  opacity: 30%;
+}
+.fab {
+  padding: 15px;
+  opacity: 30%;
+}
+.section1 iframe {
+  display: block;
+}
+.prueba-fondo {
+  background-image: url(Imagenes/prueba-fondo.jpg);
+  background-position: center;
+  margin: 20px 0px;
+  width: auto;
+  border-style: solid;
+  border-color: rgba(16, 52, 131, 0.667);
+}
+.prueba-fondo iframe {
+  width: 100%;
+  max-width: 700px;
+}
+.fondo-vendidos {
+  background-image: url(Imagenes/fondo-vendidos.jpg);
+}
+.items-carousel li {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+.linea-gradiente {
+  background: linear-gradient(to right, #2d7bea, #d23aca);
+  height: 24px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.linea-gradiente.margin {
+  margin-bottom: 10px;
+}
+.fondo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 192px 0;
+  margin: auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.fondo-destacados {
+  background-image: url(Imagenes/fondo-destacados.jpg);
+  justify-content: flex-end;
+}
+.div-button-destacados {
+  display: flex;
+  justify-content: center;
+  margin: 10px 10px;
+}
+.button-destacados a {
+  text-decoration: none;
+  color: white;
+}
+.button-mac {
+  color: black;
+}
+.button-mac a {
+  text-decoration: black;
+}
+.button-destacados a:hover {
+  color: #d23aca;
+}
+.destacados-title {
+  text-align: right;
+}
+
+.fondo-vendidos h2 {
+  margin: 10px;
+  color: rgb(255, 255, 255);
+  font-family: 'Manrope', sans-serif;
+}
+.mas-vendidos h2 {
+  flex-grow: 2;
+  font-size: 50px;
+  margin: 10px 5px;
+  font-family: 'Manrope', sans-serif;
+}
+.contenedor-destacados {
+  height: 754px;
+  width: 900px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.mas-vendidos {
+  text-align: left;
+  margin: 5px 5px;
+  color: rgb(255, 255, 255);
+  font-family: 'Manrope', sans-serif;
+}
+.mas-vendidos.h2 {
+  text-align: end;
+  transition: transform 1s linear;
+  transform-origin: 100% 50%;
+}
+.mas-vendidos.h2:hover {
+  transform: scale(1.2);
+}
+.vendidos-1 {
+  margin: 15px;
+  display: inline-block;
+  text-align: center;
+  border-style: solid;
+  border-radius: 10px;
+  color: #2d7bea;
+  overflow: hidden;
+}
+.vendidos-1 img {
+  max-width: 400px;
+  width: 100%;
+  transition: all 0.3s;
+}
+.vendidos-1:hover img {
+  transform: scale(1.1);
+}
+.vendidos-1 h3 {
+  color: rgb(255, 255, 255);
+  font-family: 'Manrope', sans-serif;
+  position: relative;
+  background-color: rgba(219, 74, 219, 1);
+  margin-bottom: 0;
+  padding: 5px 0;
+}
+.asideFondo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  color: antiquewhite;
+  font-family: 'Manrope', sans-serif;
+}
+.ubicacionText {
+  font-size: 40px;
+  text-align: center;
+  margin: 10px;
+  color: rgb(255, 255, 255);
+  font-family: 'Manrope', sans-serif;
+  text-shadow: 3px 3px 3px #d23aca;
+}
+.ubicacionMap {
+  margin-top: 1%;
+  padding: 1%;
+  background-color: #d23aca;
+  border-style: solid;
+  border-radius: 10px;
+  color: #2d7bea;
+}
+.ubicacionMap img {
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  padding: 16px;
+  display: flex;
+  background-color: rgba(87, 85, 85, 0.445);
+  color: antiquewhite;
+  font-family: 'Manrope', sans-serif;
+  justify-content: space-between;
+  align-items: center;
+}
+.iconos {
+  display: flex;
+}
+.iconos a {
+  color: white;
+  font-size: 20px;
+  padding: 0 6px;
+}
+tr {
+  letter-spacing: 2px;
+}
+
+/* Estilo iPad */
+.bodyIpad {
+  background-image: url(Imagenes/ipad-final.jpg);
+}
+.div_table_ipad {
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+.tableIpad {
+  border-radius: 15px;
+  padding: 5px;
+  background-color: #fafa;
+}
+.divGlobal {
+  margin: 10px;
+}
+.selection-version {
+  color: #d23aca;
+  text-transform: uppercase;
+  text-decoration-line: underline;
+}
+
+/* Estilo para iPhone */
+.logo-iphone__img {
+  border-style: solid;
+  border-color: #2d7bea #2d7bea #d23aca #d23aca;
+  display: flex;
+  border-width: 3px;
+  border-radius: 10px;
+  animation: girar 1s infinite linear;
+}
+
+.div-iphone {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.tit_iphone {
+  text-align: center;
+  color: blueviolet;
+  font-family: 'Poppins', sans-serif;
+  text-transform: capitalize;
+  margin: 30px 0;
+}
+.shadow-1 {
+  box-shadow: 5px 5px 5px 5px white;
+}
+.bodyIphone {
+  background-image: url(Imagenes/fondoiphone.jpg);
+}
+.h1_nav_iphone {
+  margin-top: 30px;
+}
+.container-fluid {
+  text-align: center;
+}
+
+/* .filas {
+  background-color: rgb(211, 169, 169);
+} */
+/* .imagen_iphone {
+  margin-top: 30px;
+} */
+
+/* Estilo para Wacth */
+.grid-container div {
+  border-radius: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 150px);
+  gap: 20px 20px;
+  justify-content: center;
+  grid-template-areas:
+    'watch1 watch1 watch3'
+    'watch1 watch1 watch3'
+    'watch4 watch4 watch2';
+}
+.watch1 {
+  grid-area: watch1;
+  background-image: url(Imagenes/watch.jpg);
+  background-position: center;
+  background-size: cover;
+  border: solid white 10px;
+  /* transition: 1s ease; */
+}
+
+.watch2 {
+  grid-area: watch2;
+  background-image: url(Imagenes/watch6.jpg);
+  background-size: cover;
+  background-position: center;
+  border: solid white 10px;
+  transition: transform 0.5s ease;
+  border-radius: 5px;
+}
+.watch2:hover {
+  transform: scale(1.2, 1.2);
+}
+.watch3 {
+  grid-area: watch3;
+  background-image: url(Imagenes/watch7.jpg);
+  background-position: center;
+  border: solid white 10px;
+  transition: transform 1s linear;
+}
+.watch3:hover {
+  transform: rotate(360deg);
+}
+.watch4 {
+  grid-area: watch4;
+  background-image: url(Imagenes/watch9.jpg);
+  background-position: center;
+  background-size: cover;
+  border: solid white 10px;
+  transition: transform 0.5s linear;
+}
+.watch4:hover {
+  transform: rotateX(360deg);
+}
+/* h3 {
+  color: white;
+} */
+
+.divWatch {
+  background-image: url(Imagenes/watch1.jpg);
+}
+.titWacth {
+  color: rgb(255, 255, 255);
+  font-family: 'Poppins', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.tablaWatch {
+  border-radius: 15px;
+  padding: 5px;
+  background-color: #fafa;
+}
+
+.wacthModel {
+  background-color: cornflowerblue;
+  font-family: 'Manrope', sans-serif;
+}
+.wacthColor {
+  background-color: cyan;
+  font-family: 'Manrope', sans-serif;
+}
+.wacthMedida {
+  background-color: firebrick;
+  color: floralwhite;
+  font-family: 'Manrope', sans-serif;
+}
+.wacthValor {
+  background-color: darkseagreen;
+  font-family: 'Manrope', sans-serif;
+}
+.filas {
+  background-color: rgb(212, 212, 212);
+  font-family: 'Manrope', sans-serif;
+}
+
+/* Estilo para Mac */
+.bodyMac {
+  background-image: url(Imagenes/mac--final.jpg);
+}
+.divTableMac {
+  margin-bottom: 20px;
+}
+.table_mac {
+  border-radius: 15px;
+  padding: 5px;
+  background-color: #fafa;
+}
+.divGlobal {
+  padding: 20px;
+}
+.div_nav {
+  margin-bottom: 20px;
+}
+.titMac {
+  text-align: center;
+  text-decoration: none;
+  text-transform: initial;
+  color: #2d7bea;
+  font-family: 'Manrope', sans-serif;
+  margin-top: 35px;
+  font-size: 40px;
+  text-shadow: 3px 3px 3px #d23aca;
+}
+
+.vendidos-mac h3 {
+  color: rgb(255, 255, 255);
+  font-family: 'Manrope', sans-serif;
+  position: relative;
+  background-color: #2d7bea;
+  margin-bottom: 0;
+  padding: 5px 0;
+}
+
+.div-button-mac {
+  display: flex;
+  justify-content: center;
+  margin: 10px 10px;
+}
+.button-mac {
+  color: black;
+}
+.button-mac a {
+  text-decoration: none;
+  color: black;
+}
+.button-mac a:hover {
+  color: #d23aca;
+}
+.filas {
+  background-color: rgba(172, 172, 172, 0.822);
+  font-family: 'Manrope', sans-serif;
+}
+
+/* Estilo para Nosotros */
+.bodyNosotros {
+  background-image: url(Imagenes/fondoapple11.jpg);
+  /* background-position: center; */
+}
+.nav_nosotros {
+  margin-bottom: 20px;
+}
+.tit-nosotros {
+  color: azure;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  text-align: center;
+}
+.label {
+  color: aliceblue;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 2px;
+}
+.form-group {
+  padding: 5px 0;
+}
+.contenedor-vendidos-destacados {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media screen and (max-width: 1700px) {
+  .fondo-destacados,
+  .fondo-vendidos {
+    background-image: none;
+  }
+  .fondo {
+    padding: 64px 0;
+    justify-content: center;
+  }
+  .mas-vendidos h2,
+  .destacados-title {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 830px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .navIndex ul li {
+    display: block;
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 464px) {
+  .navIndex {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 1150px) {
+  .grid-container {
+    display: block;
+    grid-template-columns: repeat(1, 350px);
+    grid-template-rows: repeat(3, 150px);
+    /* gap: gap en smart si es igual que en desktop borras esta propiedad (fiajte qu eno puse display grid xq ya lo trae del otro tamaño; */
+    /* justify-content: center idem gap; */
+  }
+  .watch1,
+  .watch2,
+  .watch3,
+  .watch4 {
+    height: 250px;
+    margin-top: 1.5rem;
+  }
+}
