@@ -72,6 +72,13 @@
               </ul>
             </nav>
           </div>
+          <div class="contenedor-menu-hamburguesa">
+            <div class="menu-hamburguesa">
+              <span></span>
+              <span></span> 
+              <span></span>
+            </div>
+          </div>
         </header>
       </div>
       <section class="prueba-fondo">
@@ -196,5 +203,13 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const hamburguerMenu = document.querySelector('.menu-hamburguesa');
+      const toggleMenu = () =>{
+        document.querySelector('.navIndex').classList.toggle('active');
+        document.querySelector('.menu-hamburguesa').classList.toggle('active');
+      }
+      hamburguerMenu.addEventListener('click', toggleMenu);
+    </script>
   </body>
 </html>

@@ -24,6 +24,9 @@
     <title>iPad - iPhoneFamilyArg</title>
   </head>
   <body class="bodyIpad">
+    <div class="blur-effect">
+      <div></div>
+    </div>
     <div class="divGlobal">
       <div>
         <header class="header">
@@ -64,44 +67,31 @@
               </ul>
             </nav>
           </div>
+          <div class="contenedor-menu-hamburguesa">
+            <div class="menu-hamburguesa">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
         </header>
       </div>
-    </div>
-    <h1 class="titMac">Lleva tus tareas a donde vayas</h1>
-    <h3 class="titMac ticMac2">Elige tu propio iPad</h3>
-    <div class="contenedor-fondo">
-      <div class="contenedor-vendidos-destacados">
-        <div class="vendidos-1 vendidos-mac">
-          <img src="Imagenes/iPad-air.jpg" alt="iphone_destacado" />
-          <h3>iPad Air</h3>
-          <div class="select-carro">
-            <label for="form-group" class="selection-version"
-              >Elige version:</label
-            >
-            <select name="Elige version" id="">
-              <option value="">iPad Air 256gb USD499</option>
-              <option value="">iPad Air 512gb USD599</option>
-            </select>
-          </div>
-          <div class="div-button-mac">
-            <button type="button" class="button-mac">
-              <a href="#"
-                >Agregar a Carrito<i class="fas fa-shopping-cart"></i
-              ></a>
-            </button>
-          </div>
-        </div>
-        <div class="vendidos-1 vendidos-mac">
-          <img src="Imagenes/ipad-pro.jpg" alt="iphone_destacado2" />
-          <h3 class="wow animate__animated animate__pulse">iPad Pro</h3>
-          <div class="select-carro">
-            <label for="form-group" class="selection-version"
-              >Elige version:</label
-            >
-            <select name="Elige version" id="">
-              <option value="">iPad Pro 256gb USD699</option>
-              <option value="">iPad Pro 512gb USD899</option>
-            </select>
+      <h1 class="titMac">Lleva tus tareas a donde vayas</h1>
+      <h3 class="titMac ticMac2">Elige tu propio iPad</h3>
+      <div class="contenedor-fondo">
+        <div class="contenedor-vendidos-destacados">
+          <div class="vendidos-1 vendidos-mac">
+            <img src="Imagenes/iPad-air.jpg" alt="iphone_destacado" />
+            <h3>iPad Air</h3>
+            <div class="select-carro">
+              <label for="form-group" class="selection-version"
+                >Elige version:</label
+              >
+              <select name="Elige version" id="">
+                <option value="">iPad Air 256gb USD499</option>
+                <option value="">iPad Air 512gb USD599</option>
+              </select>
+            </div>
             <div class="div-button-mac">
               <button type="button" class="button-mac">
                 <a href="#"
@@ -110,9 +100,30 @@
               </button>
             </div>
           </div>
+          <div class="vendidos-1 vendidos-mac">
+            <img src="Imagenes/ipad-pro.jpg" alt="iphone_destacado2" />
+            <h3 class="wow animate__animated animate__pulse">iPad Pro</h3>
+            <div class="select-carro">
+              <label for="form-group" class="selection-version"
+                >Elige version:</label
+              >
+              <select name="Elige version" id="">
+                <option value="">iPad Pro 256gb USD699</option>
+                <option value="">iPad Pro 512gb USD899</option>
+              </select>
+              <div class="div-button-mac">
+                <button type="button" class="button-mac">
+                  <a href="#"
+                    >Agregar a Carrito<i class="fas fa-shopping-cart"></i
+                  ></a>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
     <footer class="footer">
       <div class>Copyright</div>
       <div class="iconos">
@@ -120,5 +131,13 @@
         <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
     </footer>
+    <script>
+      const hamburguerMenu = document.querySelector('.menu-hamburguesa');
+      const toggleMenu = () => {
+        document.querySelector('.navIndex').classList.toggle('active');
+        document.querySelector('.menu-hamburguesa').classList.toggle('active');
+      };
+      hamburguerMenu.addEventListener('click', toggleMenu);
+    </script>
   </body>
 </html>

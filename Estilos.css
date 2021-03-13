@@ -2,6 +2,9 @@
   margin: 0%;
   padding: 0%;
 }
+body{
+  overflow-x: hidden;
+}
 
 /* Estilo para Index */
 .divIndex {
@@ -10,7 +13,39 @@
   background-size: cover;
   background-position: center;
 }
+.contenedor-menu-hamburguesa{
+  display: none;
+  width: 50px; 
+  align-items: center;
+  margin-right: 10px;
+}
+.menu-hamburguesa{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  cursor: pointer;
+}
+.menu-hamburguesa span{
+  width: 100%;
+  background-color: #fff;
+  height: 4px;
+  display: block;
+  transition: all .2s;
+  
+}
+.menu-hamburguesa.active span:nth-child(1){
+transform: translateY(13px) rotate(45deg);
+}
 
+.menu-hamburguesa.active span:nth-child(2){
+opacity: 0;
+}
+
+.menu-hamburguesa.active span:nth-child(3){
+  transform: translateY(-13px) rotate(-45deg);
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -455,16 +490,40 @@ tr {
 
 /* Estilo para Mac */
 .blur-effect {
-  background-image: url(Imagenes/mac--final.jpg);
-  background-position: center;
-  background-size: cover;
   width: 100%;
   height: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 0;
-  filter: blur(3px)
+}
+.bodyMac .blur-effect div{
+  background-image: url(Imagenes/mac--final.jpg);
+}
+.bodyIphone .blur-effect div{
+  background-image: url(Imagenes/fondoiphone.jpg);
+}
+.bodyIpad .blur-effect div{
+  background-image: url(Imagenes/ipad-final.jpg);
+}
+.bodyNosotros .blur-effect div{
+  background-image: url(Imagenes/fondoapple11.jpg);
+}
+.divWatch .blur-effect div{
+  background-image: url(Imagenes/watch1.jpg);
+}
+
+
+.blur-effect div{
+  background-position: center;
+  background-size: cover;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  z-index: 0;
+  filter: blur(3px);
 }
 .divGlobal, .footer {
   position: relative;
@@ -567,20 +626,27 @@ tr {
     text-align: center;
   }
 }
-@media screen and (max-width: 830px) {
-  .header {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .navIndex ul li {
-    display: block;
-    margin-bottom: 0;
-  }
+@media screen and (max-width: 1360px){
+  .contenedor-menu-hamburguesa{
+    display: flex;
 }
-@media screen and (max-width: 464px) {
-  .navIndex {
-    margin-top: 10px;
-  }
+.navIndex{
+  width: 100%;
+  position: absolute;
+  background-color:black;
+  top: calc(100%  + 20px);
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.9);
+  display: none;
+}
+.navIndex.active{
+  display: block;
+}
+.header{
+  position: relative;
+}
+.navIndex ul li {
+  display: block;
+}
 }
 @media (max-width: 1150px) {
   .grid-container {
@@ -598,3 +664,20 @@ tr {
     margin-top: 1.5rem;
   }
 }
+@media screen and (max-width: 830px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .navIndex ul li {
+    display: block;
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 464px) {
+  .navIndex {
+    margin-top: 10px;
+  }
+}
+
+

@@ -25,6 +25,9 @@
     <title>Watch - iPhoneFamilyArg</title>
   </head>
   <body class="divWatch">
+    <div class="blur-effect">
+      <div></div>
+    </div>
     <div class="divGlobal">
       <div class="div_nav_watch">
         <div>
@@ -68,6 +71,13 @@
                 </ul>
               </nav>
             </div>
+            <div class="contenedor-menu-hamburguesa">
+              <div class="menu-hamburguesa">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
           </header>
         </div>
         <h1 class="titWacth">No hay ninguno mejor que un Apple Watch</h1>
@@ -88,5 +98,13 @@
         <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
     </footer>
+    <script>
+      const hamburguerMenu = document.querySelector('.menu-hamburguesa');
+      const toggleMenu = () => {
+        document.querySelector('.navIndex').classList.toggle('active');
+        document.querySelector('.menu-hamburguesa').classList.toggle('active');
+      };
+      hamburguerMenu.addEventListener('click', toggleMenu);
+    </script>
   </body>
 </html>
