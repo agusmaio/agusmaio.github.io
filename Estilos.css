@@ -667,7 +667,6 @@ tr {
 @media screen and (max-width: 830px) {
   .header {
     flex-wrap: wrap;
-    justify-content: center;
   }
   .navIndex ul li {
     display: block;
