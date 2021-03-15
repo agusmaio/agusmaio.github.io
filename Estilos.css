@@ -33,16 +33,13 @@ body{
   height: 4px;
   display: block;
   transition: all .2s;
-  
 }
 .menu-hamburguesa.active span:nth-child(1){
 transform: translateY(13px) rotate(45deg);
 }
-
 .menu-hamburguesa.active span:nth-child(2){
 opacity: 0;
 }
-
 .menu-hamburguesa.active span:nth-child(3){
   transform: translateY(-13px) rotate(-45deg);
 }
@@ -58,7 +55,7 @@ opacity: 0;
   border-color: #2d7bea #2d7bea #d23aca #d23aca;
   /* animation: girar 1s infinite linear; */
 }
-@keyframes girar {
+/* @keyframes girar {
   0% {
     border-color: #2d7bea #2d7bea #d23aca #d23aca;
     transform: translate(10px, 0);
@@ -72,7 +69,7 @@ opacity: 0;
     border-color: #2d7bea #2d7bea #d23aca #d23aca;
     transform: translate(20px, 0);
     /* filter: blur(3px); */
-  }
+  /* }
   75% {
     border-color: #d23aca #d23aca #2d7bea #2d7bea;
     transform: translate(15px, 0);
@@ -81,7 +78,7 @@ opacity: 0;
     border-color: #2d7bea #2d7bea #d23aca #d23aca;
     transform: translate(10px, 0);
   }
-}
+} */
 .navIndex {
   /* background-color: rgba(16, 52, 131, 0.667); */
   border-style: solid;
@@ -115,6 +112,15 @@ opacity: 0;
 .navIndex nav a {
   color: rgb(255, 255, 255);
   font-family: 'Noto Sans', sans-serif;
+}
+.bienvenidos{
+  font-family: 'Manrope', sans-serif;
+  text-align: center;
+  text-decoration: none;
+  text-transform: initial;
+  color: #fff;
+  margin-top: 25px;
+  text-shadow: 3px 3px 3px #d23aca;
 }
 .footer {
   background-image: linear-gradient(to right, #2d7bea, #d23aca);
@@ -654,7 +660,7 @@ tr {
     background-image: none;
   }
   .fondo {
-    padding: 64px 0;
+    padding: 35px 0;
     justify-content: center;
   }
   .mas-vendidos h2,
