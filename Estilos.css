@@ -56,7 +56,7 @@ opacity: 0;
   border: solid 3px;
   border-radius: 10px;
   border-color: #2d7bea #2d7bea #d23aca #d23aca;
-  animation: girar 1s infinite linear;
+  /* animation: girar 1s infinite linear; */
 }
 @keyframes girar {
   0% {
@@ -124,24 +124,39 @@ opacity: 0;
   animation: footer-animation 3s infinite ease;
   margin-top: 30px;
 }
-/* @keyframes footer-animation {
-  0% {
-    background-color:#2d7bea;
-  }
-  50% {
-    background-color:#d23aca;
-  }
-  100% {
-    background-color:#2d7bea;
-  }
+.container-iconos{
+  display:scroll;
+  position:fixed;
+  bottom: 400px;
+  right:0px;
+}
+.cuadrado-iconos{
+  margin: 5px 0px;
+}
+.iconos{
+  width: 50px;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: end;
+}
+/* .cuadrado-whatsapp{
+  background-color: greenyellow;
+}
+.cuadrado-instagram{
+  background-color: #d23aca;
 } */
 .fas {
   padding: 0px 15px;
   opacity: 30%;
 }
 .fab {
-  padding: 15px;
+  padding: 0px 15px;
   opacity: 30%;
+}
+.fa-whatsapp{
+  opacity: none;
 }
 .section1 iframe {
   display: block;
@@ -328,6 +343,9 @@ tr {
 .bodyIpad {
   background-image: url(Imagenes/ipad-final.jpg);
 }
+.select-carro{
+  padding-top: 10px;
+}
 .div_table_ipad {
   margin-left: 30px;
   margin-bottom: 20px;
@@ -350,10 +368,13 @@ tr {
 .logo-iphone__img {
   border-style: solid;
   border-color: #2d7bea #2d7bea #d23aca #d23aca;
-  display: flex;
+  /* display: flex; */
   border-width: 3px;
   border-radius: 10px;
-  animation: girar 1s infinite linear;
+  /* animation: girar 1s infinite linear; */
+}
+.listado-iphone{
+  
 }
 
 .div-iphone {
@@ -362,11 +383,19 @@ tr {
   justify-content: space-between;
 }
 .tit_iphone {
+  /* text-align: center;
+  color: blueviolet; */
+  font-family: 'Manrope', sans-serif;
+  /* text-transform: capitalize;
+  margin: 30px 0; */
   text-align: center;
-  color: blueviolet;
-  font-family: 'Poppins', sans-serif;
-  text-transform: capitalize;
-  margin: 30px 0;
+    text-decoration: none;
+    text-transform: initial;
+    color: #fff;
+    margin-top: 35px;
+    font-size: 35px;
+    text-shadow: 3px 3px 3px #d23aca;
+    margin-bottom: 25px;
 }
 .shadow-1 {
   box-shadow: 5px 5px 5px 5px white;
@@ -549,7 +578,7 @@ tr {
   text-transform: initial;
   color: #2d7bea;
   font-family: 'Manrope', sans-serif;
-  margin-top: 35px;
+  margin: 35px;
   font-size: 40px;
   text-shadow: 3px 3px 3px #d23aca;
 }
@@ -587,6 +616,17 @@ tr {
 .bodyNosotros {
   background-image: url(Imagenes/fondoapple11.jpg);
   /* background-position: center; */
+}
+.nosotros-p {
+  font-family: 'Manrope', sans-serif;
+  text-align: center;
+  text-decoration: none;
+  text-transform: initial;
+  color: #fff;
+  margin-top: 35px;
+  font-size: 20px;
+  text-shadow: 3px 3px 3px #d23aca;
+  margin-bottom: 25px;
 }
 .nav_nosotros {
   margin-bottom: 20px;
@@ -671,6 +711,11 @@ tr {
   .navIndex ul li {
     display: block;
     margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 720px){
+  .listado-iphone {
+    display: none;
   }
 }
 @media screen and (max-width: 464px) {
