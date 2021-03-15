@@ -47,6 +47,7 @@ opacity: 0;
   display: flex;
   justify-content: space-between;
   column-gap: 50px;
+  z-index: 999999999999999999999;
 }
 .logo-logo {
   display: flex;
@@ -147,12 +148,10 @@ opacity: 0;
   align-items: center;
   justify-content: end;
 }
-/* .cuadrado-whatsapp{
-  background-color: greenyellow;
+.formas-pago{
+  display:flex;
+
 }
-.cuadrado-instagram{
-  background-color: #d23aca;
-} */
 .fas {
   padding: 0px 15px;
   opacity: 30%;
@@ -332,6 +331,9 @@ footer {
   font-family: 'Manrope', sans-serif;
   justify-content: space-between;
   align-items: center;
+}
+.h3-footer{
+  font-size: 14px;
 }
 .iconos {
   display: flex;
