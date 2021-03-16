@@ -129,6 +129,11 @@ opacity: 0;
   border-radius: 10px;
   border-color: #2d7bea #2d7bea #d23aca #d23aca;
   margin-top: 30px;
+  padding: 16px;
+  color: antiquewhite;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .container-footer{
   width: 100%;
@@ -340,29 +345,6 @@ opacity: 0;
   height: auto;
 }
 
-footer {
-  padding: 16px;
-  display: flex;
-  background-color: rgba(87, 85, 85, 0.445);
-  color: antiquewhite;
-  font-family: 'Manrope', sans-serif;
-  justify-content: space-between;
-  align-items: center;
-}
-.h3-footer{
-  font-size: 14px;
-}
-.iconos {
-  display: flex;
-}
-.iconos a {
-  color: white;
-  font-size: 20px;
-  padding: 0 6px;
-}
-tr {
-  letter-spacing: 2px;
-}
 
 /* Estilo iPad */
 .bodyIpad {
@@ -587,9 +569,9 @@ tr {
   padding: 5px;
   background-color: #fafa;
 }
-/* .divGlobal {
+.divGlobal {
   padding: 20px;
-} */
+}
 .div_nav {
   margin-bottom: 20px;
 }
