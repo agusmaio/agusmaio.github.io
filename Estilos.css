@@ -128,8 +128,25 @@ opacity: 0;
   border-style: solid;
   border-radius: 10px;
   border-color: #2d7bea #2d7bea #d23aca #d23aca;
-  animation: footer-animation 3s infinite ease;
   margin-top: 30px;
+}
+.container-footer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.box-footer{
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.h6-footer {
+  font-family: 'Manrope', sans-serif;
+  margin-top: 10px;
+  text-decoration:none;
+  color: #fff;
 }
 .container-iconos{
   display:scroll;
@@ -571,7 +588,7 @@ tr {
   background-color: #fafa;
 }
 .divGlobal {
-  padding: 20px;
+  /* padding: 20px; */
 }
 .div_nav {
   margin-bottom: 20px;
@@ -717,9 +734,16 @@ tr {
     margin-bottom: 0;
   }
 }
-@media screen and (max-width: 720px){
-  .listado-iphone {
-    display: none;
+@media screen and (max-width: 500px){
+  .footer {
+    display: block;
+  }
+  .container-footer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .h6-footer {
+    display: none; 
   }
 }
 @media screen and (max-width: 464px) {
