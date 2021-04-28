@@ -8,13 +8,6 @@
       name="description"
       content="Todas los iPhone para vos. Somos iPhoneFamilyArg"
     />
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-      crossorigin="anonymous"
-    /> -->
-
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
       rel="stylesheet"
@@ -32,8 +25,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-
+    
     <link rel="stylesheet" href="Estilos.css" />
+    >
     <title>iPhone - iPhoneFamilyArg</title>
   </head>
   <body class="bodyIphone">
@@ -92,33 +86,41 @@
         </header>
       </div>
       <div class="divGlobal__h1 wow animate__ animate__rubberBand animated">
-        <h1 class="tit_iphone wow animate__animated animate__rubberBand ">
+        <h1 class="tit_iphone wow animate__animated animate__rubberBand">
           Los mejores iPhone los encontras en iPhoneFamilyArg
         </h1>
       </div>
-      <div class="container-fluid">
-        <!-- divGlobal__div-iphone -->
+      <div class="container-fluid divGlobal__div-iphone">
         <img
           class="logo-iphone__img listado-iphone"
           src="Imagenes/listado-iphone.jpeg"
           alt="lista-iphone"
         />
         <div class="contenedor-fondo">
-          <div class="contenedor-vendidos-destacados">
-            <div class="vendidos-1 vendidos-mac wow animate__animated animate__backInLeft">
+          <div class="row" id="productos"></div>
+          <!-- <div class="contenedor-vendidos-destacados">
+            <div
+              class="vendidos-1 vendidos-mac wow animate__animated animate__backInLeft">
               <img src="Imagenes/iphone12pro.jpg" alt="iphone-12pro" />
               <h3 class="wow animate__ animate__pulse animated">
-                iPhone 12 Pro - Azul Marino
+                
+              </h3>
+              <h3 class="wow animate__ animate__pulse animated">
+                
               </h3>
               <div class="div-button-mac">
-                <button type="button" class="button-mac">
-                  <a href="#"
-                    >Agregar a Carrito<i class="fas fa-shopping-cart"></i
-                  ></a>
+                <button
+                  onclick="agregarCarrito(1200, 2)"
+                  type="button"
+                  class="button-mac"
+                >
+                  <a>Agregar a Carrito<i class="fas fa-shopping-cart"></i></a>
                 </button>
               </div>
             </div>
-            <div class="vendidos-1 vendidos-mac wow animate__animated animate__backInRight">
+            <div
+              class="vendidos-1 vendidos-mac wow animate__animated animate__backInRight"
+            >
               <img
                 src="Imagenes/iphone12pro-plata.jpg"
                 alt="iphone-12pro-plata"
@@ -126,95 +128,166 @@
               <h3 class="wow animate__animated animate__pulse">
                 iPhone 12 Pro - Plata
               </h3>
+              <h3 class="wow animate__ animate__pulse animated">
+                USD 1200
+              </h3>
               <div class="div-button-mac">
-                <button type="button" class="button-mac">
-                  <a href="#"
-                    >Agregar a Carrito<i class="fas fa-shopping-cart"></i
-                  ></a>
+                <button
+                  onclick="agregarCarrito(1200, 3)"
+                  type="button"
+                  class="button-mac"
+                >
+                  <a>Agregar a Carrito<i class="fas fa-shopping-cart"></i></a>
                 </button>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
-        <div class="contenedor-fondo">
+        <!-- <div class="contenedor-fondo">
           <div class="contenedor-vendidos-destacados">
-            <div class="vendidos-1 vendidos-mac wow animate__animated animate__fadeInUp">
+            <div
+              class="vendidos-1 vendidos-mac wow animate__animated animate__fadeInUp"
+            >
               <img src="Imagenes/iphone12-azul.jpg" alt="iphone-12-azul" />
               <h3 class="wow animate__ animate__pulse animated">
                 iPhone 12 - Azul
               </h3>
+              <h3 class="wow animate__ animate__pulse animated">
+                USD 1000
+              </h3>
               <div class="div-button-mac">
-                <button type="button" class="button-mac">
-                  <a href="#"
-                    >Agregar a Carrito<i class="fas fa-shopping-cart"></i
-                  ></a>
+                <button
+                  onclick="agregarCarrito(1000, 2)"
+                  type="button"
+                  class="button-mac"
+                >
+                  <a>Agregar a Carrito<i class="fas fa-shopping-cart"></i></a>
                 </button>
               </div>
             </div>
-            <div class="vendidos-1 vendidos-mac wow animate__animated animate__fadeInUp">
+            <div
+              class="vendidos-1 vendidos-mac wow animate__animated animate__fadeInUp"
+            >
               <img src="Imagenes/iphone12-lima.png" alt="iphone-12-lima" />
               <h3 class="wow animate__animated animate__pulse">
                 iPhone 12 - Lima
               </h3>
+              <h3 class="wow animate__ animate__pulse animated">
+                USD 1000
+              </h3>
               <div class="div-button-mac">
-                <button type="button" class="button-mac">
-                  <a href="#"
-                    >Agregar a Carrito<i class="fas fa-shopping-cart"></i
-                  ></a>
+                <button
+                  onclick="agregarCarrito(1000, 0)"
+                  type="button"
+                  class="button-mac"
+                >
+                  <a>Agregar a Carrito<i class="fas fa-shopping-cart"></i></a>
                 </button>
               </div>
             </div>
           </div>
-        </div>
-        <div class="contenedor-fondo">
+        </div> -->
+        <!-- <div class="contenedor-fondo">
           <div class="contenedor-vendidos-destacados">
-            <div class="vendidos-1 vendidos-mac wow animate__animated animate__backInLeft">
+            <div
+              class="vendidos-1 vendidos-mac wow animate__animated animate__backInLeft"
+            >
               <img src="Imagenes/iphone11.png" alt="iphone-11" />
               <h3 class="wow animate__ animate__pulse animated">
                 iPhone 11 - Varios
               </h3>
+              <h3 class="wow animate__ animate__pulse animated">
+                USD 750
+              </h3>
               <div class="div-button-mac">
-                <button type="button" class="button-mac">
-                  <a href="#"
-                    >Agregar a Carrito<i class="fas fa-shopping-cart"></i
-                  ></a>
+                <button
+                  onclick="agregarCarrito(750, 1)"
+                  type="button"
+                  class="button-mac"
+                >
+                  <a>Agregar a Carrito<i class="fas fa-shopping-cart"></i></a>
                 </button>
               </div>
             </div>
-            <div class="vendidos-1 vendidos-mac wow animate__animated animate__backInRight">
+            <div
+              class="vendidos-1 vendidos-mac wow animate__animated animate__backInRight"
+            >
               <img src="Imagenes/iphone-se.jpg" alt="iphone-SE" />
               <h3 class="wow animate__animated animate__pulse">
                 iPhone SE - Rojo
               </h3>
+              <h3 class="wow animate__ animate__pulse animated">
+                USD 550
+              </h3>
               <div class="div-button-mac">
-                <button type="button" class="button-mac">
-                  <a href="#"
-                    >Agregar a Carrito<i class="fas fa-shopping-cart"></i
-                  ></a>
+                <button
+                  onclick="agregarCarrito(550, 3)"
+                  type="button"
+                  class="button-mac"
+                >
+                  <a>Agregar a Carrito<i class="fas fa-shopping-cart"></i></a>
                 </button>
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
+      <div class="buttonFinalizar">
+        <button
+          onclick="calcularCuotas()"
+          type="button"
+          class="button-mac"
+        >
+          <a>Finalizar Compra<i class="fas fa-shopping-cart"></i></a>
+        </button>
       <footer class="footer">
         <div class="container-footer">
-          <div class="box-footer"><a href="Nosotros.html"><img src="https://img.icons8.com/material-outlined/24/000000/secured-letter--v2.png"/></a>
-          <a class="h6-footer" href="Nosotros.html">Escribinos</a>
+          <div class="box-footer">
+            <a href="Nosotros.html"
+              ><img
+                src="https://img.icons8.com/material-outlined/24/000000/secured-letter--v2.png"
+            /></a>
+            <a class="h6-footer" href="Nosotros.html">Escribinos</a>
           </div>
 
-          <div class="box-footer"><a href="https://wa.link/b6pr0y"><img src="https://img.icons8.com/material-outlined/24/000000/iphone--v1.png"/></a>
-          <a class="h6-footer" href="https://wa.link/b6pr0y">Whatsapp</a>
+          <div class="box-footer">
+            <a href="https://wa.link/b6pr0y"
+              ><img
+                src="https://img.icons8.com/material-outlined/24/000000/iphone--v1.png"
+            /></a>
+            <a class="h6-footer" href="https://wa.link/b6pr0y">Whatsapp</a>
           </div>
 
-          <div class="box-footer"><a href="https://www.facebook.com/iphonefamilyarg"><img src="https://img.icons8.com/android/24/000000/facebook.png"/></a>
-          <a class="h6-footer" href="https://www.facebook.com/iphonefamilyarg">Facebook</a></div>
+          <div class="box-footer">
+            <a href="https://www.facebook.com/iphonefamilyarg"
+              ><img src="https://img.icons8.com/android/24/000000/facebook.png"
+            /></a>
+            <a class="h6-footer" href="https://www.facebook.com/iphonefamilyarg"
+              >Facebook</a
+            >
+          </div>
 
-          <div class="box-footer"><a href="https://www.instagram.com/iphonefamilyarg/?hl=es-la"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/instagram-new.png"/></a>
-          <a class="h6-footer" href="https://www.instagram.com/iphonefamilyarg/?hl=es-la">Instagram</a></div>
+          <div class="box-footer">
+            <a href="https://www.instagram.com/iphonefamilyarg/?hl=es-la"
+              ><img
+                src="https://img.icons8.com/fluent-systems-filled/24/000000/instagram-new.png"
+            /></a>
+            <a
+              class="h6-footer"
+              href="https://www.instagram.com/iphonefamilyarg/?hl=es-la"
+              >Instagram</a
+            >
+          </div>
 
-          <div class="box-footer"><a href="https://goo.gl/maps/5Lrbq7SvziaT6swY9"><img src="https://img.icons8.com/ios-filled/24/000000/google-maps-new.png"/></a>
-          <a class="h6-footer" href="https://goo.gl/maps/5Lrbq7SvziaT6swY9">Visitanos</a></div>
+          <div class="box-footer">
+            <a href="https://goo.gl/maps/5Lrbq7SvziaT6swY9"
+              ><img
+                src="https://img.icons8.com/ios-filled/24/000000/google-maps-new.png"
+            /></a>
+            <a class="h6-footer" href="https://goo.gl/maps/5Lrbq7SvziaT6swY9"
+              >Visitanos</a
+            >
+          </div>
         </div>
       </footer>
     </div>
@@ -238,12 +311,13 @@
       new WOW().init();
     </script>
     <script>
-      const hamburguerMenu = document.querySelector('.menu-hamburguesa');
+      const hamburguerMenu = document.querySelector(".menu-hamburguesa");
       const toggleMenu = () => {
-        document.querySelector('.navIndex').classList.toggle('active');
-        document.querySelector('.menu-hamburguesa').classList.toggle('active');
+        document.querySelector(".navIndex").classList.toggle("active");
+        document.querySelector(".menu-hamburguesa").classList.toggle("active");
       };
-      hamburguerMenu.addEventListener('click', toggleMenu);
+      hamburguerMenu.addEventListener("click", toggleMenu);
     </script>
+    <script src="claseArray.js"></script>
   </body>
 </html>

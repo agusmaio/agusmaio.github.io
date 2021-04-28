@@ -2,7 +2,7 @@
   margin: 0%;
   padding: 0%;
 }
-body{
+body {
   overflow-x: hidden;
 }
 
@@ -13,13 +13,13 @@ body{
   background-size: cover;
   background-position: center;
 }
-.contenedor-menu-hamburguesa{
+.contenedor-menu-hamburguesa {
   display: none;
-  width: 50px; 
+  width: 50px;
   align-items: center;
   margin-right: 10px;
 }
-.menu-hamburguesa{
+.menu-hamburguesa {
   width: 100%;
   height: 40px;
   display: flex;
@@ -27,20 +27,20 @@ body{
   align-items: center;
   cursor: pointer;
 }
-.menu-hamburguesa span{
+.menu-hamburguesa span {
   width: 100%;
   background-color: #fff;
   height: 4px;
   display: block;
-  transition: all .2s;
+  transition: all 0.2s;
 }
-.menu-hamburguesa.active span:nth-child(1){
-transform: translateY(13px) rotate(45deg);
+.menu-hamburguesa.active span:nth-child(1) {
+  transform: translateY(13px) rotate(45deg);
 }
-.menu-hamburguesa.active span:nth-child(2){
-opacity: 0;
+.menu-hamburguesa.active span:nth-child(2) {
+  opacity: 0;
 }
-.menu-hamburguesa.active span:nth-child(3){
+.menu-hamburguesa.active span:nth-child(3) {
   transform: translateY(-13px) rotate(-45deg);
 }
 .header {
@@ -70,7 +70,7 @@ opacity: 0;
     border-color: #2d7bea #2d7bea #d23aca #d23aca;
     transform: translate(20px, 0);
     /* filter: blur(3px); */
-  /* }
+/* }
   75% {
     border-color: #d23aca #d23aca #2d7bea #2d7bea;
     transform: translate(15px, 0);
@@ -112,10 +112,10 @@ opacity: 0;
 }
 .navIndex nav a {
   color: rgb(255, 255, 255);
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
-.bienvenidos{
-  font-family: 'Manrope', sans-serif;
+.bienvenidos {
+  font-family: "Manrope", sans-serif;
   text-align: center;
   text-decoration: none;
   text-transform: initial;
@@ -135,34 +135,34 @@ opacity: 0;
   justify-content: space-between;
   align-items: center;
 }
-.container-footer{
+.container-footer {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-around;
 }
-.box-footer{
+.box-footer {
   width: 50px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 .h6-footer {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   margin-top: 10px;
-  text-decoration:none;
+  text-decoration: none;
   color: #fff;
 }
-.container-iconos{
-  display:scroll;
-  position:fixed;
+.container-iconos {
+  display: scroll;
+  position: fixed;
   bottom: 350px;
-  right:0px;
+  right: 0px;
 }
-.cuadrado-iconos{
+.cuadrado-iconos {
   margin: 5px 0px;
 }
-.iconos{
+.iconos {
   width: 50px;
   height: 100px;
   display: flex;
@@ -170,9 +170,8 @@ opacity: 0;
   align-items: center;
   justify-content: end;
 }
-.formas-pago{
-  display:flex;
-
+.formas-pago {
+  display: flex;
 }
 .fas {
   padding: 0px 15px;
@@ -182,7 +181,7 @@ opacity: 0;
   padding: 0px 15px;
   opacity: 30%;
 }
-.fa-whatsapp{
+.fa-whatsapp {
   opacity: none;
 }
 .section1 iframe {
@@ -258,13 +257,13 @@ opacity: 0;
 .fondo-vendidos h2 {
   margin: 10px;
   color: rgb(255, 255, 255);
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 .mas-vendidos h2 {
   flex-grow: 2;
   font-size: 50px;
   margin: 10px 5px;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 .contenedor-destacados {
   height: 754px;
@@ -279,7 +278,7 @@ opacity: 0;
   text-align: left;
   margin: 5px 5px;
   color: rgb(255, 255, 255);
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 .mas-vendidos.h2 {
   text-align: end;
@@ -297,7 +296,10 @@ opacity: 0;
   border-radius: 10px;
   color: #2d7bea;
   overflow: hidden;
-  
+}
+.buttonFinalizar {
+  display: inline;
+  text-align: center;
 }
 .vendidos-1 img {
   max-width: 400px;
@@ -310,7 +312,7 @@ opacity: 0;
 }
 .vendidos-1 h3 {
   color: rgb(255, 255, 255);
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   position: relative;
   background-color: rgba(219, 74, 219, 1);
   margin-bottom: 0;
@@ -322,14 +324,14 @@ opacity: 0;
   align-items: center;
 
   color: antiquewhite;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 .ubicacionText {
   font-size: 40px;
   text-align: center;
   margin: 10px;
   color: rgb(255, 255, 255);
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   text-shadow: 3px 3px 3px #d23aca;
 }
 .ubicacionMap {
@@ -345,12 +347,11 @@ opacity: 0;
   height: auto;
 }
 
-
 /* Estilo iPad */
 .bodyIpad {
   background-image: url(Imagenes/ipad-final.jpg);
 }
-.select-carro{
+.select-carro {
   padding-top: 10px;
 }
 .div_table_ipad {
@@ -388,17 +389,17 @@ opacity: 0;
 .tit_iphone {
   /* text-align: center;
   color: blueviolet; */
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   /* text-transform: capitalize;
   margin: 30px 0; */
   text-align: center;
-    text-decoration: none;
-    text-transform: initial;
-    color: #fff;
-    margin-top: 35px;
-    font-size: 35px;
-    text-shadow: 3px 3px 3px #d23aca;
-    margin-bottom: 25px;
+  text-decoration: none;
+  text-transform: initial;
+  color: #fff;
+  margin-top: 35px;
+  font-size: 35px;
+  text-shadow: 3px 3px 3px #d23aca;
+  margin-bottom: 25px;
 }
 .shadow-1 {
   box-shadow: 5px 5px 5px 5px white;
@@ -432,9 +433,9 @@ opacity: 0;
   gap: 20px 20px;
   justify-content: center;
   grid-template-areas:
-    'watch1 watch1 watch3'
-    'watch1 watch1 watch3'
-    'watch4 watch4 watch2';
+    "watch1 watch1 watch3"
+    "watch1 watch1 watch3"
+    "watch4 watch4 watch2";
 }
 .watch1 {
   grid-area: watch1;
@@ -487,7 +488,7 @@ opacity: 0;
 }
 .titWacth {
   color: rgb(255, 255, 255);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
@@ -500,24 +501,24 @@ opacity: 0;
 
 .wacthModel {
   background-color: cornflowerblue;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 .wacthColor {
   background-color: cyan;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 .wacthMedida {
   background-color: firebrick;
   color: floralwhite;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 .wacthValor {
   background-color: darkseagreen;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 .filas {
   background-color: rgb(212, 212, 212);
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
 /* Estilo para Mac */
@@ -529,24 +530,23 @@ opacity: 0;
   left: 0;
   z-index: 0;
 }
-.bodyMac .blur-effect div{
+.bodyMac .blur-effect div {
   background-image: url(Imagenes/mac--final.jpg);
 }
-.bodyIphone .blur-effect div{
+.bodyIphone .blur-effect div {
   background-image: url(Imagenes/fondoiphone.jpg);
 }
-.bodyIpad .blur-effect div{
+.bodyIpad .blur-effect div {
   background-image: url(Imagenes/ipad-final.jpg);
 }
-.bodyNosotros .blur-effect div{
+.bodyNosotros .blur-effect div {
   background-image: url(Imagenes/fondoapple11.jpg);
 }
-.divWatch .blur-effect div{
+.divWatch .blur-effect div {
   background-image: url(Imagenes/watch1.jpg);
 }
 
-
-.blur-effect div{
+.blur-effect div {
   background-position: center;
   background-size: cover;
   width: calc(100% + 20px);
@@ -557,7 +557,8 @@ opacity: 0;
   z-index: 0;
   filter: blur(3px);
 }
-.divGlobal, .footer {
+.divGlobal,
+.footer {
   position: relative;
   z-index: 1;
 }
@@ -580,7 +581,7 @@ opacity: 0;
   text-decoration: none;
   text-transform: initial;
   color: #2d7bea;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   margin: 35px;
   font-size: 40px;
   text-shadow: 3px 3px 3px #d23aca;
@@ -588,7 +589,7 @@ opacity: 0;
 
 .vendidos-mac h3 {
   color: rgb(255, 255, 255);
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   position: relative;
   background-color: #2d7bea;
   margin-bottom: 0;
@@ -612,7 +613,7 @@ opacity: 0;
 }
 .filas {
   background-color: rgba(172, 172, 172, 0.822);
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
 /* Estilo para Nosotros */
@@ -621,7 +622,7 @@ opacity: 0;
   /* background-position: center; */
 }
 .nosotros-p {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   text-align: center;
   text-decoration: none;
   text-transform: initial;
@@ -636,7 +637,7 @@ opacity: 0;
 }
 .tit-nosotros {
   color: azure;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   letter-spacing: 2px;
   margin-bottom: 20px;
   margin-top: 50px;
@@ -644,7 +645,7 @@ opacity: 0;
 }
 .label {
   color: aliceblue;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   letter-spacing: 2px;
 }
 .form-group {
@@ -669,27 +670,27 @@ opacity: 0;
     text-align: center;
   }
 }
-@media screen and (max-width: 1360px){
-  .contenedor-menu-hamburguesa{
+@media screen and (max-width: 1360px) {
+  .contenedor-menu-hamburguesa {
     display: flex;
-}
-.navIndex{
-  width: 100%;
-  position: absolute;
-  background-color:black;
-  top: calc(100%  + 20px);
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.9);
-  display: none;
-}
-.navIndex.active{
-  display: block;
-}
-.header{
-  position: relative;
-}
-.navIndex ul li {
-  display: block;
-}
+  }
+  .navIndex {
+    width: 100%;
+    position: absolute;
+    background-color: black;
+    top: calc(100% + 20px);
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.9);
+    display: none;
+  }
+  .navIndex.active {
+    display: block;
+  }
+  .header {
+    position: relative;
+  }
+  .navIndex ul li {
+    display: block;
+  }
 }
 @media (max-width: 1150px) {
   .grid-container {
@@ -717,21 +718,21 @@ opacity: 0;
   }
 }
 
-@media screen and (max-width: 660px){
-  .listado-iphone{
+@media screen and (max-width: 660px) {
+  .listado-iphone {
     display: none;
   }
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 500px) {
   .footer {
     display: block;
   }
-  .container-footer{
+  .container-footer {
     display: flex;
     flex-wrap: wrap;
   }
   .h6-footer {
-    display: none; 
+    display: none;
   }
 }
 @media screen and (max-width: 464px) {
@@ -739,5 +740,3 @@ opacity: 0;
     margin-top: 10px;
   }
 }
-
-
