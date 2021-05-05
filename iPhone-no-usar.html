@@ -26,7 +26,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     
-    <link rel="stylesheet" href="Estilos-primitivo.css" />
+    <link rel="stylesheet" href="Estilos.css" />
+    >
+    <script src="claseDOM.js" defer></script>
     <title>iPhone - iPhoneFamilyArg</title>
   </head>
   <body class="bodyIphone">
@@ -72,22 +74,21 @@
                     ><i class="fab fa-apple"></i><b>Nosotros</b></a
                   >
                 </li>
-                <li>
-                  <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
-                  <div class="modal-contenedor">
-                    <div class="modal-carrito">
-                        <h3>Carrito</h3>
-                        <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
-                        <div id="carrito-contenedor">
-                            <!-- <div class="productoEnCarrito">
-                                <p>Buzo 1</p>
-                                <p>Precio: $1200</p>
-                                <button class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
-                            </div> -->
-                        </div>
-                        <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
-                    </div>
-                  </div>
+                <li id="boton-carrito">
+                  <a>
+                    <i class="fas fa-shopping-cart"></i><b>Carrito</b><span id="contadorCarrito">0</span>
+                      <!-- <div class="modal-carrito">
+                          <h3>Carrito</h3>
+                          <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+                          <div id="carrito-contenedor">
+                              <div class="productoEnCarrito">
+                                  <p>Buzo 1</p>
+                                  <p>Precio: $1200</p>
+                                  <button class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+                              </div>
+                          </div>
+                          <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
+                      </div></a> -->
                 </li>
               </ul>
             </nav>
@@ -188,7 +189,6 @@
         </div>
       </footer>
     </div>
-    <script src="claseDOM.js" defer></script>
     <!-- <div class="container-iconos">
       <div class="iconos">
         <div class="cuadrado-iconos">

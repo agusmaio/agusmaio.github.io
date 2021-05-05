@@ -45,7 +45,33 @@ body {
 }
 
 /* modal para carrito */
+
+#boton-carrito {
+  border: none;
+  color: white;
+  font-size: 20px;
+  background-color: transparent; 
+  border-radius: 25%;
+  transition: all 0.3s;
+  text-decoration: none;
+  border: 2px solid transparent;
+  padding: 5px 10px;
+  transition: all .3s;
+  
+}
+#boton-carrito:hover {
+  cursor: pointer;
+  border-style: solid;
+  border-color: #2d7bea #2d7bea #d23aca #d23aca;
+  border-radius: 10px;
+}
+#boton-carrito:focus {
+  outline: none;
+}
+
+
 .modal-contenedor {
+  
   position: fixed;
   top: 0;
   width: 100%;
@@ -65,6 +91,7 @@ body {
 }
 
 .modal-carrito {
+  border-radius: 10px;
   position: relative;
   background-color: white;
   min-width: 500px;
@@ -100,7 +127,6 @@ body {
   padding-top: 10px;
   
 }
-
 .productoEnCarrito {
   border-left: 5px solid lightblue;
   border-bottom-left-radius: 3px;
@@ -619,7 +645,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: -1;
 }
 .bodyMac .blur-effect div {
   background-image: url(Imagenes/mac--final.jpg);

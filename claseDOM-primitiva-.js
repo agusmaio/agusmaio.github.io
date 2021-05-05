@@ -69,73 +69,74 @@
 
 //mensaje de bienvenida para titulo
 window.onload = () => {
-  // const titulo = document.getElementById("titulo-iphone");
-  // const usuario = prompt("Hola, ingresa tu nombre");
-  // titulo.innerHTML = `Bienvenido ${usuario}, elegi tu iPhone!`;
+const titulo = document.getElementById('titulo-iphone')
+const usuario = prompt("Hola, ingresa tu nombre")
+titulo.innerHTML = `Bienvenido ${usuario}, elegi tu iPhone!`
 
-  let carrito = [];
-  let totalCarrito = 0;
-  let precio = 0;
-  let stock = 0;
+let carrito = [];
+let totalCarrito = 0;
+let precio = 0;
+let stock = 0;
 
-  const baseDeDatosProductos = [
-    {
-      id: 1,
-      nombre: "iPhone 12 Pro",
-      precio: 1200,
-      imagen: "Imagenes/iphone12pro.jpg",
-      stock: "2",
-    },
-    {
-      id: 2,
-      nombre: "iPhone 12 Pro",
-      precio: 1200,
-      imagen: "Imagenes/iphone12pro-plata.jpg",
-      stock: "2",
-    },
-    {
-      id: 3,
-      nombre: "iPhone 12",
-      precio: 1000,
-      imagen: "Imagenes/iphone12-azul.jpg",
-      stock: "2",
-    },
-    {
-      id: 4,
-      nombre: "iPhone 12",
-      precio: 1000,
-      imagen: "Imagenes/iphone12-lima.png",
-      stock: "0",
-    },
-    {
-      id: 5,
-      nombre: "iPhone 11",
-      precio: 750,
-      imagen: "Imagenes/iphone11.png",
-      stock: "2",
-    },
-    {
-      id: 6,
-      nombre: "iPhone SE",
-      precio: 550,
-      imagen: "Imagenes/iphone-se.jpg",
-      stock: "2",
-    },
-  ];
+const baseDeDatosProductos = [
+  {
+    id: 1,
+    nombre: "iPhone 12 Pro",
+    precio: 1200,
+    imagen: "Imagenes/iphone12pro.jpg",
+    stock: "2",
+  },
+  {
+    id: 2,
+    nombre: "iPhone 12 Pro",
+    precio: 1200,
+    imagen: "Imagenes/iphone12pro-plata.jpg",
+    stock: "2",
+  },
+  {
+    id: 3,
+    nombre: "iPhone 12",
+    precio: 1000,
+    imagen: "Imagenes/iphone12-azul.jpg",
+    stock: "2",
+  },
+  {
+    id: 4,
+    nombre: "iPhone 12",
+    precio: 1000,
+    imagen: "Imagenes/iphone12-lima.png",
+    stock: "0",
+  },
+  {
+    id: 5,
+    nombre: "iPhone 11",
+    precio: 750,
+    imagen: "Imagenes/iphone11.png",
+    stock: "2",
+  },
+  {
+    id: 6,
+    nombre: "iPhone SE",
+    precio: 550,
+    imagen: "Imagenes/iphone-se.jpg",
+    stock: "2",
+  },
+];
 
-  let acumulador = ``;
+let acumulador = ``;
 
-  mostrarProductos(baseDeDatosProductos);
-  function mostrarProductos(baseDeDatosProductos) {
-    let acumulador = "";
+mostrarProductos(baseDeDatosProductos)
+function mostrarProductos(baseDeDatosProductos){
 
-    for (let i = 0; i < baseDeDatosProductos.length; i++) {
-      acumulador += `<div class="vendidos-1 vendidos-mac">
+let acumulador= '';
+
+for (let i = 0; i < baseDeDatosProductos.length; i++) {
+  acumulador += `<div class="vendidos-1 vendidos-mac wow animate__animated animate__backInLeft">
   <img src=${baseDeDatosProductos[i].imagen} alt="iphone-12pro" />
-  <h3 class="">
+  <h3 class="wow animate__ animate__pulse animated">
     ${baseDeDatosProductos[i].nombre} 
   </h3>
-  <h3 class="">${baseDeDatosProductos[i].precio}</h3>
+  <h3 class="wow animate__ animate__pulse animated">${baseDeDatosProductos[i].precio}</h3>
   <div class="div-button-mac">
     <button onclick="agregarCarrito(${baseDeDatosProductos[i].id}, ${baseDeDatosProductos[i].precio}, ${baseDeDatosProductos[i].stock})" type="button" class="button-mac">
       <a>
@@ -143,60 +144,49 @@ window.onload = () => {
       </a>
     </button>
   </div>
-</div>`
-    }
-    document.getElementById("productos").innerHTML = acumulador;
+</div>;`
+}
+document.getElementById("productos").innerHTML = acumulador;
+}
+
+
+
+//funcion para filtro por nombre.
+const selectFiltro = document.getElementById('select-model') 
+function filtrar() {
+  let valorfiltro = selectFiltro.value
+    if (valorfiltro == 'Todos') {
+    mostrarProductos(baseDeDatosProductos)
+  } else {
+      mostrarProductos(baseDeDatosProductos.filter( el => el.nombre == selectFiltro.value)) 
   }
+}
 
-  //funcion para filtro por nombre.
-  const selectFiltro = document.getElementById("select-model");
-  function filtrar() {
-    let valorfiltro = selectFiltro.value;
-    if (valorfiltro == "Todos") {
-      mostrarProductos(baseDeDatosProductos);
-    } else {
-      mostrarProductos(
-        baseDeDatosProductos.filter((el) => el.nombre == selectFiltro.value)
-      );
-    }
-  }
+selectFiltro.addEventListener('change', ()=>{
+  filtrar()
+})
 
-  selectFiltro.addEventListener("change", () => {
-    filtrar();
-  });
+//funcion para agregado de carrito
+function agregarCarrito(id){
+  let productoElegido = baseDeDatosProductos.find( el => el.id == id )
+  carrito.push(productoElegido) 
 
-  //funcion para agregado de carrito
-  function agregarCarrito(id) {
-    let productoElegido = baseDeDatosProductos.find((el) => el.id == id);
-    carrito.push(productoElegido);
+  localStorage.setItem('carrito', JSON.stringify(carrito))
 
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    console.log(carrito);
-  }
-};
+  console.log(carrito)
+}
 
 //Modal carrito
-const contenedorModal = document.getElementsByClassName('modal-contenedor')[0] //cero porque devuelve arrays entonces el primero es cero
-const botonAbrir = document.getElementById('boton-carrito')
-const botonCerrar = document.getElementById('carritoCerrar')
-const modalCarrito = document.getElementsByClassName('modal-carrito')[0]
+// const contenedorModal = document.getElementsByClassName('modal-contenedor')[0] //cero porque devuelve arrays entonces el primero es cero
+// const botonAbrir = document.getElementById('boton-carrito')
+// const botonCerrar = document.getElementById('carritoCerrar')
 
-
-
-botonAbrir.addEventListener('click',()=>{
-  contenedorModal.classList.toggle('modal-active')
-})
-botonCerrar.addEventListener('click',()=>{
-  contenedorModal.classList.toggle('modal-active')
-})
-contenedorModal.addEventListener('click', ()=>{
-  contenedorModal.classList.remove('modal-active')
-})
-modalCarrito.addEventListener('click', (event)=>{
-  event.stopPropagation()
-})
-
+// botonAbrir.addEventListener('click',()=>{
+//   contenedorModal.classList.add('modal-active')
+// })
+// botonCerrar.addEventListener('click',()=>{
+//   contenedorModal.classList.remove('modal-active')
+// })
 
 // function mostrarTotal(){
 //   console.log(carrito.reduce((acc, el) => acc += el.precio, 0))
@@ -246,3 +236,6 @@ modalCarrito.addEventListener('click', (event)=>{
 //       break;
 //   }
 //}
+
+
+}
