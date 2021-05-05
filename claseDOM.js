@@ -66,50 +66,68 @@
 //     entrada = prompt("Como te llamas?");
 //   }
 // }
+
+//mensaje de bienvenida para titulo
+const titulo = document.getElementById('titulo-iphone')
+const usuario = prompt("Hola, ingresa tu nombre")
+titulo.innerHTML = `Bienvenido ${usuario}, elegi tu iPhone!`
+
+let carrito = [];
 let totalCarrito = 0;
 let precio = 0;
 let stock = 0;
 
 const baseDeDatosProductos = [
   {
-    nombre: "iPhone 12 Pro - Azul Marino",
-    precio: "1200",
+    id: 1,
+    nombre: "iPhone 12 Pro",
+    precio: 1200,
     imagen: "Imagenes/iphone12pro.jpg",
     stock: "2",
   },
   {
-    nombre: "iPhone 12 Pro - Plata",
-    precio: "1200",
+    id: 2,
+    nombre: "iPhone 12 Pro",
+    precio: 1200,
     imagen: "Imagenes/iphone12pro-plata.jpg",
     stock: "2",
   },
   {
-    nombre: "iPhone 12 - Azul",
-    precio: "1000",
+    id: 3,
+    nombre: "iPhone 12",
+    precio: 1000,
     imagen: "Imagenes/iphone12-azul.jpg",
     stock: "2",
   },
   {
-    nombre: "iPhone 12 - Lima",
-    precio: "1000",
+    id: 4,
+    nombre: "iPhone 12",
+    precio: 1000,
     imagen: "Imagenes/iphone12-lima.png",
     stock: "0",
   },
   {
-    nombre: "iPhone 11 - Varios",
-    precio: "750",
+    id: 5,
+    nombre: "iPhone 11",
+    precio: 750,
     imagen: "Imagenes/iphone11.png",
     stock: "2",
   },
   {
-    nombre: "iPhone SE - Rojo",
-    precio: "550",
+    id: 6,
+    nombre: "iPhone SE",
+    precio: 550,
     imagen: "Imagenes/iphone-se.jpg",
     stock: "2",
   },
 ];
 
 let acumulador = ``;
+
+mostrarProductos(baseDeDatosProductos)
+function mostrarProductos(baseDeDatosProductos){
+
+let acumulador= '';
 
 for (let i = 0; i < baseDeDatosProductos.length; i++) {
   acumulador += `<div class="vendidos-1 vendidos-mac wow animate__animated animate__backInLeft">
@@ -119,7 +137,7 @@ for (let i = 0; i < baseDeDatosProductos.length; i++) {
   </h3>
   <h3 class="wow animate__ animate__pulse animated">${baseDeDatosProductos[i].precio}</h3>
   <div class="div-button-mac">
-    <button onclick="agregarCarrito(${baseDeDatosProductos[i].precio}, ${baseDeDatosProductos[i].stock})" type="button" class="button-mac">
+    <button onclick="agregarCarrito(${baseDeDatosProductos[i].id}, ${baseDeDatosProductos[i].precio}, ${baseDeDatosProductos[i].stock})" type="button" class="button-mac">
       <a>
         Agregar a Carrito<i class="fas fa-shopping-cart"></i>
       </a>
@@ -128,47 +146,79 @@ for (let i = 0; i < baseDeDatosProductos.length; i++) {
 </div>;`;
 }
 document.getElementById("productos").innerHTML = acumulador;
-
-function agregarCarrito(precio, stock) {
-  let hayStock = validacionStock(stock);
-  if (hayStock) {
-    totalCarrito = totalCarrito + precio;
-    console.log(`Agregaste producto al carrito. El total es: ${totalCarrito}`);
-    console.log(
-      `El precio final con IVA incluido es: ${sumarIva(totalCarrito)}`
-    );
-  }
 }
-function validacionStock(stock) {
-  if (stock > 0) {
-    alert("Tenemos stock");
-    return true;
+
+
+
+//funcion para filtro por nombre.
+const selectFiltro = document.getElementById('select-model') 
+function filtrar() {
+  let valorfiltro = selectFiltro.value
+    if (valorfiltro == 'Todos') {
+    mostrarProductos(baseDeDatosProductos)
   } else {
-    alert("No tenemos stock suficiente de este producto");
-    return false;
+      mostrarProductos(baseDeDatosProductos.filter( el => el.nombre == selectFiltro.value)) 
   }
-}
-function sumarIva(totalCarrito) {
-  return totalCarrito * 1.21;
 }
 
-function calcularCuotas() {
-  let cuotas = prompt("Selecciones cuotas (1,3,6,12)");
-  switch (cuotas) {
-    case "1":
-      console.log("la cuota es:" + sumarIva(totalCarrito) / 1);
-      break;
-    case "3":
-      console.log("la cuota es:" + sumarIva(totalCarrito) / 3);
-      break;
-    case "6":
-      console.log("la cuota es:" + sumarIva(totalCarrito) / 6);
-      break;
-    case "12":
-      console.log("la cuota es:" + sumarIva(totalCarrito) / 12);
-      break;
-    default:
-      alert("No hay plan disponible");
-      break;
-  }
+//funcion para agregado de carrito
+function agregarCarrito(id){
+  let productoElegido = baseDeDatosProductos.find( el => el.id == id )
+  carrito.push(productoElegido) 
+
+  localStorage.setItem('carrito', JSON.stringify(carrito))
+
+  console.log(carrito)
 }
+
+function mostrarTotal(){
+  console.log(carrito.reduce((acc, el) => acc += el.precio, 0))
+}
+
+// function agregarCarrito(precio, stock, id) {
+//   let hayStock = validacionStock(stock);
+//   if (hayStock) {
+//     totalCarrito = totalCarrito + precio;
+//     console.log(`Agregaste producto al carrito. El total es: ${totalCarrito}`);
+//     console.log(
+//       `El precio final con IVA incluido es: ${sumarIva(totalCarrito)}`
+//     );
+//     // console.log(`El producto agregado es: ${id}`)
+//   }
+// }
+// function validacionStock(stock) {
+//   if (stock > 0) {
+//     alert("Tenemos stock");
+//     return true;
+//   } else {
+//     alert("No tenemos stock suficiente de este producto");
+//     return false;
+//   }
+// }
+// function sumarIva(totalCarrito) {
+//   return totalCarrito * 1.21;
+// }
+
+// function calcularCuotas() {
+//   let cuotas = prompt("Selecciones cuotas (1,3,6,12)");
+//   switch (cuotas) {
+//     case "1":
+//       console.log("la cuota es:" + sumarIva(totalCarrito) / 1);
+//       break;
+//     case "3":
+//       console.log("la cuota es:" + sumarIva(totalCarrito) / 3);
+//       break;
+//     case "6":
+//       console.log("la cuota es:" + sumarIva(totalCarrito) / 6);
+//       break;
+//     case "12":
+//       console.log("la cuota es:" + sumarIva(totalCarrito) / 12);
+//       break;
+//     default:
+//       alert("No hay plan disponible");
+//       break;
+//   }
+//}
+
+
+

@@ -43,11 +43,102 @@ body {
 .menu-hamburguesa.active span:nth-child(3) {
   transform: translateY(-13px) rotate(-45deg);
 }
+
+/* modal para carrito */
+.modal-contenedor {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-carrito {
+  position: relative;
+  background-color: white;
+  min-width: 500px;
+  padding: 20px;
+  margin-top: -100%;
+  transition: all .5s;
+}
+
+.modal-active .modal-carrito {
+  margin-top: 0;
+}
+
+.modal-carrito h3 {
+  color: royalblue;
+  padding-bottom: 5px;
+}
+.modal-carrito #carritoCerrar {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  color: royalblue;
+  border: none;
+  background-color: white;
+}
+.modal-carrito #carritoCerrar:hover {
+  cursor: pointer;
+}
+.modal-carrito #carritoCerrar:focus {
+  outline: none;
+}
+.modal-carrito .precioProducto {
+  padding-top: 10px;
+  
+}
+
+.productoEnCarrito {
+  border-left: 5px solid lightblue;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  margin: 5px 0;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.productoEnCarrito:hover {
+  border-left: 5px solid royalblue;
+}
+
+.boton-eliminar {
+  background-color: white;
+  color: red;
+  border: none;
+  font-size: 20px;
+}
+
+.boton-eliminar:hover {
+  cursor: pointer;
+}
+.boton-eliminar:focus {
+  outline: none;
+}
+
+/* termina modal para carrito */
+
 .header {
   display: flex;
   justify-content: space-between;
   column-gap: 50px;
   z-index: 999999999999999999999;
+}
+
+.button-filter {
+  margin-bottom: 20px;
 }
 .logo-logo {
   display: flex;
@@ -112,10 +203,10 @@ body {
 }
 .navIndex nav a {
   color: rgb(255, 255, 255);
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 .bienvenidos {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   text-align: center;
   text-decoration: none;
   text-transform: initial;
@@ -148,7 +239,7 @@ body {
   flex-wrap: wrap;
 }
 .h6-footer {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   margin-top: 10px;
   text-decoration: none;
   color: #fff;
@@ -257,13 +348,13 @@ body {
 .fondo-vendidos h2 {
   margin: 10px;
   color: rgb(255, 255, 255);
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 .mas-vendidos h2 {
   flex-grow: 2;
   font-size: 50px;
   margin: 10px 5px;
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 .contenedor-destacados {
   height: 754px;
@@ -278,7 +369,7 @@ body {
   text-align: left;
   margin: 5px 5px;
   color: rgb(255, 255, 255);
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 .mas-vendidos.h2 {
   text-align: end;
@@ -312,7 +403,7 @@ body {
 }
 .vendidos-1 h3 {
   color: rgb(255, 255, 255);
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   position: relative;
   background-color: rgba(219, 74, 219, 1);
   margin-bottom: 0;
@@ -324,14 +415,14 @@ body {
   align-items: center;
 
   color: antiquewhite;
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 .ubicacionText {
   font-size: 40px;
   text-align: center;
   margin: 10px;
   color: rgb(255, 255, 255);
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   text-shadow: 3px 3px 3px #d23aca;
 }
 .ubicacionMap {
@@ -389,7 +480,7 @@ body {
 .tit_iphone {
   /* text-align: center;
   color: blueviolet; */
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   /* text-transform: capitalize;
   margin: 30px 0; */
   text-align: center;
@@ -433,9 +524,9 @@ body {
   gap: 20px 20px;
   justify-content: center;
   grid-template-areas:
-    "watch1 watch1 watch3"
-    "watch1 watch1 watch3"
-    "watch4 watch4 watch2";
+    'watch1 watch1 watch3'
+    'watch1 watch1 watch3'
+    'watch4 watch4 watch2';
 }
 .watch1 {
   grid-area: watch1;
@@ -488,7 +579,7 @@ body {
 }
 .titWacth {
   color: rgb(255, 255, 255);
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
@@ -501,24 +592,24 @@ body {
 
 .wacthModel {
   background-color: cornflowerblue;
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 .wacthColor {
   background-color: cyan;
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 .wacthMedida {
   background-color: firebrick;
   color: floralwhite;
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 .wacthValor {
   background-color: darkseagreen;
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 .filas {
   background-color: rgb(212, 212, 212);
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 
 /* Estilo para Mac */
@@ -581,7 +672,7 @@ body {
   text-decoration: none;
   text-transform: initial;
   color: #2d7bea;
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   margin: 35px;
   font-size: 40px;
   text-shadow: 3px 3px 3px #d23aca;
@@ -589,7 +680,7 @@ body {
 
 .vendidos-mac h3 {
   color: rgb(255, 255, 255);
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   position: relative;
   background-color: #2d7bea;
   margin-bottom: 0;
@@ -613,7 +704,7 @@ body {
 }
 .filas {
   background-color: rgba(172, 172, 172, 0.822);
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 
 /* Estilo para Nosotros */
@@ -622,7 +713,7 @@ body {
   /* background-position: center; */
 }
 .nosotros-p {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   text-align: center;
   text-decoration: none;
   text-transform: initial;
@@ -637,7 +728,7 @@ body {
 }
 .tit-nosotros {
   color: azure;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   letter-spacing: 2px;
   margin-bottom: 20px;
   margin-top: 50px;
@@ -645,7 +736,7 @@ body {
 }
 .label {
   color: aliceblue;
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   letter-spacing: 2px;
 }
 .form-group {
