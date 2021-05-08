@@ -50,14 +50,13 @@ body {
   border: none;
   color: white;
   font-size: 20px;
-  background-color: transparent; 
+  background-color: transparent;
   border-radius: 25%;
   transition: all 0.3s;
   text-decoration: none;
   border: 2px solid transparent;
   padding: 5px 10px;
-  transition: all .3s;
-  
+  transition: all 0.3s;
 }
 #boton-carrito:hover {
   cursor: pointer;
@@ -69,9 +68,7 @@ body {
   outline: none;
 }
 
-
 .modal-contenedor {
-  
   position: fixed;
   top: 0;
   width: 100%;
@@ -80,7 +77,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all .5s;
+  transition: all 0.5s;
   opacity: 0;
   visibility: hidden;
 }
@@ -97,7 +94,7 @@ body {
   min-width: 500px;
   padding: 20px;
   margin-top: -100%;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .modal-active .modal-carrito {
@@ -125,7 +122,6 @@ body {
 }
 .modal-carrito .precioProducto {
   padding-top: 10px;
-  
 }
 .productoEnCarrito {
   border-left: 5px solid lightblue;

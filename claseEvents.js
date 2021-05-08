@@ -121,7 +121,7 @@ window.onload = () => {
       imagen: "Imagenes/iphone-se.jpg",
       stock: "2",
     },
-  ];
+  ]
 
   let acumulador = ``;
 
@@ -137,15 +137,24 @@ window.onload = () => {
   </h3>
   <h3 class="">${baseDeDatosProductos[i].precio}</h3>
   <div class="div-button-mac">
-    <button onclick="agregarCarrito(${baseDeDatosProductos[i].id}, ${baseDeDatosProductos[i].precio}, ${baseDeDatosProductos[i].stock})" type="button" class="button-mac">
+    <button onclick='agregarCarrito(${baseDeDatosProductos[i].id}, ${baseDeDatosProductos[i].precio}, ${baseDeDatosProductos[i].stock})' type="button" class="button-mac">
       <a>
         Agregar a Carrito<i class="fas fa-shopping-cart"></i>
       </a>
     </button>
   </div>
 </div>`
-    }
-    document.getElementById("productos").innerHTML = acumulador;
+}
+document.getElementById("productos").innerHTML = acumulador;
+
+//funcion para agregado de carrito
+  function agregarCarrito(id) {
+    let productoElegido = baseDeDatosProductos.find((el) => el.id == id);
+    carrito.push(productoElegido);
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    console.log(carrito);
   }
 
   //funcion para filtro por nombre.
@@ -160,21 +169,13 @@ window.onload = () => {
       );
     }
   }
-
   selectFiltro.addEventListener("change", () => {
     filtrar();
-  });
+  })
+}
 
-  //funcion para agregado de carrito
-  function agregarCarrito(id) {
-    let productoElegido = baseDeDatosProductos.find((el) => el.id == id);
-    carrito.push(productoElegido);
 
-    localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    console.log(carrito);
-  }
-};
 
 //Modal carrito
 const contenedorModal = document.getElementsByClassName('modal-contenedor')[0] //cero porque devuelve arrays entonces el primero es cero
@@ -245,4 +246,5 @@ modalCarrito.addEventListener('click', (event)=>{
 //       alert("No hay plan disponible");
 //       break;
 //   }
-//}
+// }
+}
