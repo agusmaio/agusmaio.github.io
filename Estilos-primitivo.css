@@ -102,8 +102,13 @@ body {
 }
 
 .modal-carrito h3 {
+  font-family: 'Noto Sans', sans-serif;
   color: royalblue;
   padding-bottom: 5px;
+}
+
+.modal-carrito p{
+  font-family: 'Noto Sans', sans-serif;
 }
 .modal-carrito #carritoCerrar {
   position: absolute;
@@ -112,7 +117,7 @@ body {
   font-size: 20px;
   color: royalblue;
   border: none;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 .modal-carrito #carritoCerrar:hover {
   cursor: pointer;
@@ -124,16 +129,16 @@ body {
   padding-top: 10px;
 }
 .productoEnCarrito {
-  border-left: 5px solid lightblue;
+  border-left: 5px solid #d23aca;
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
   margin: 5px 0;
   padding: 5px 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
 }
 .productoEnCarrito:hover {
-  border-left: 5px solid royalblue;
+  border-left: 5px solid #2d7bea;
 }
 
 .boton-eliminar {
@@ -145,6 +150,7 @@ body {
 
 .boton-eliminar:hover {
   cursor: pointer;
+  color: black;
 }
 .boton-eliminar:focus {
   outline: none;

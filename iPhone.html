@@ -27,6 +27,7 @@
     />
     
     <link rel="stylesheet" href="Estilos-primitivo.css" />
+    <script src="/jquery-3.6.0.min.js"></script>
     <title>iPhone - iPhoneFamilyArg</title>
   </head>
   <body class="bodyIphone">
@@ -129,6 +130,15 @@
           <div class="row" id="productos"></div>
         </div>
       </div>
+      <div class="button-filter">
+        <select id="select-fundas">
+          <option value="0">Seleccione</option>
+          <option value="iPhone 12 Pro">Fundas iPhone 12 Pro</option>
+          <option value="iPhone 12">Fundas iPhone 12</option>
+          <option value="iPhone 11">Fundas iPhone 11</option>
+          <option value="iPhone SE">Fundas iPhone SE</option>
+        </select>
+
       <div class="buttonFinalizar">
         <button
           onclick="calcularCuotas()"
@@ -137,6 +147,17 @@
         >
           <a>Finalizar Compra<i class="fas fa-shopping-cart"></i></a>
         </button>
+        <div class=row id="producto"></div>
+        
+      
+
+<!-- 
+        <button
+          onclick="traerDatos('fundas iphone')"
+          type="button"
+          class="button-mac">
+        <a>Buscar Fundas<i class="fas fa-shopping-cart"></i></a>
+        </button> -->
       <footer class="footer">
         <div class="container-footer">
           <div class="box-footer">
@@ -146,6 +167,7 @@
             /></a>
             <a class="h6-footer" href="Nosotros.html">Escribinos</a>
           </div>
+
 
           <div class="box-footer">
             <a href="https://wa.link/b6pr0y"

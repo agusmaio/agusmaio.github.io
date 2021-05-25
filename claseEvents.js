@@ -68,7 +68,7 @@
 // }
 
 //mensaje de bienvenida para titulo
-window.onload = () => {
+// window.onload = () => 
   // const titulo = document.getElementById("titulo-iphone");
   // const usuario = prompt("Hola, ingresa tu nombre");
   // titulo.innerHTML = `Bienvenido ${usuario}, elegi tu iPhone!`;
@@ -122,67 +122,111 @@ window.onload = () => {
       stock: "2",
     },
   ]
-
+  
   let acumulador = ``;
 
   mostrarProductos(baseDeDatosProductos);
-  function mostrarProductos(baseDeDatosProductos) {
+  function mostrarProductos(productos) {
     let acumulador = "";
-
-    for (let i = 0; i < baseDeDatosProductos.length; i++) {
+    for (let i = 0; i < productos.length; i++) {
       acumulador += `<div class="vendidos-1 vendidos-mac">
-  <img src=${baseDeDatosProductos[i].imagen} alt="iphone-12pro" />
+  <img src=${productos[i].imagen} alt="iphone-12pro" />
   <h3 class="">
-    ${baseDeDatosProductos[i].nombre} 
+    ${productos[i].nombre} 
   </h3>
-  <h3 class="">${baseDeDatosProductos[i].precio}</h3>
+  <h3 class="">${productos[i].precio}</h3>
   <div class="div-button-mac">
-    <button onclick='agregarCarrito(${baseDeDatosProductos[i].id}, ${baseDeDatosProductos[i].precio}, ${baseDeDatosProductos[i].stock})' type="button" class="button-mac">
+    <button onclick='agregarCarrito(${productos[i].id}, ${productos[i].precio}, ${productos[i].stock})' type="button" class="button-mac">
       <a>
         Agregar a Carrito<i class="fas fa-shopping-cart"></i>
       </a>
     </button>
   </div>
-</div>`
-}
+</div>`}
+    
+
 document.getElementById("productos").innerHTML = acumulador;
 
-//funcion para agregado de carrito
-  function agregarCarrito(id) {
-    let productoElegido = baseDeDatosProductos.find((el) => el.id == id);
-    carrito.push(productoElegido);
-
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    console.log(carrito);
-  }
 
   //funcion para filtro por nombre.
-  const selectFiltro = document.getElementById("select-model");
+  
   function filtrar() {
-    let valorfiltro = selectFiltro.value;
-    if (valorfiltro == "Todos") {
-      mostrarProductos(baseDeDatosProductos);
-    } else {
-      mostrarProductos(
-        baseDeDatosProductos.filter((el) => el.nombre == selectFiltro.value)
-      );
+    const selectFiltro = document.getElementById("select-model");
+    let valorFiltro = selectFiltro.value;
+    let productosFiltrados = []
+    if(valorFiltro == "Todos"){
+      productosFiltrados = baseDeDatosProductos
     }
-  }
-  selectFiltro.addEventListener("change", () => {
-    filtrar();
+    else{
+     productosFiltrados = baseDeDatosProductos.filter((el) => el.nombre == selectFiltro.value)
+    }
+   mostrarProductos(productosFiltrados)
+   }
+  $("#select-model").on("change", () => {
+    filtrar()
   })
+  // selectFiltro.addEventListener("change", () => {
+  //   filtrar();
+  // })
 }
 
 
+$("#select-fundas").on("change", () => {
+  const selectFundas = document.getElementById("select-fundas")
+  traerDatos(selectFundas.value)
+  })
 
+//funcion para agregado de carrito
+function agregarCarrito(id) {
+  let productoElegido = baseDeDatosProductos.find((el) => el.id == id);
+  carrito.push(productoElegido);
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  console.log(carrito);
+
+  actualizarCarrito()
+}
+
+//Para eliminar de modal carrito
+function eliminarProducto(id){
+  let productoAEliminar = carrito.find (el => el.id == id)
+  let indice = carrito.indexOf(productoAEliminar)
+
+  carrito.splice(indice, 1)
+  console.log(carrito)
+  actualizarCarrito()
+}
+
+//Para actualizar de modal carrito
+function actualizarCarrito() {
+  contenedorCarrito.innerHTML= ``
+
+  carrito.forEach( (baseDeDatosProductos) => {
+    const div = document.createElement('div')
+    div.classList.add('productoEnCarrito')
+    div.innerHTML = `
+                    <p>${baseDeDatosProductos.nombre}</p>
+                    <p>Precio: $${baseDeDatosProductos.precio}</p>
+                    <button onclick=eliminarProducto(${baseDeDatosProductos.id}) class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>`
+    
+    contenedorCarrito.appendChild(div)
+  })
+
+  contadorCarrito.innerText = carrito.length
+  precioTotal.innerText = carrito.reduce((acc, el) => acc += el.precio, 0)
+
+}
 
 //Modal carrito
 const contenedorModal = document.getElementsByClassName('modal-contenedor')[0] //cero porque devuelve arrays entonces el primero es cero
+const contenedorCarrito = document.getElementById('carrito-contenedor')
 const botonAbrir = document.getElementById('boton-carrito')
 const botonCerrar = document.getElementById('carritoCerrar')
 const modalCarrito = document.getElementsByClassName('modal-carrito')[0]
 
+const contadorCarrito = document.getElementById('contadorCarrito')
+const precioTotal = document.getElementById('precioTotal')
 
 
 botonAbrir.addEventListener('click',()=>{
@@ -192,11 +236,76 @@ botonCerrar.addEventListener('click',()=>{
   contenedorModal.classList.toggle('modal-active')
 })
 contenedorModal.addEventListener('click', ()=>{
-  contenedorModal.classList.remove('modal-active')
+  contenedorModal.classList.remove('modal-active') //puede ser tambien:  botonCerrar.click()
 })
 modalCarrito.addEventListener('click', (event)=>{
   event.stopPropagation()
 })
+
+
+function traerDatos(busqueda) {
+  $.get(
+    "https://api.mercadolibre.com/sites/MLA/search?seller_id=568872399&q="+busqueda,
+    function (response, status) {
+      const results = response.results
+      const productosMeli = results.map(element => {
+        let aux = {
+          title: element.title,
+          img: element.thumbnail,
+          id: element.id,
+          price: element.price,
+          stock: element.available_quantity
+        }
+        return aux;
+      })
+      let card = "";
+      for (let i = 0; i < productosMeli.length; i++) {
+        card += `<div class="vendidos-1 vendidos-mac">
+    <img src=${productosMeli[i].img} alt="iphone-12pro" />
+    <h3 class="">
+      ${productosMeli[i].title} 
+    </h3>
+    <h3 class="">${productosMeli[i].price}</h3>
+    <div class="div-button-mac">
+      <button onclick='agregarCarrito(${productosMeli[i].id}, ${productosMeli[i].price}, ${productosMeli[i].available_quantity})' type="button" class="button-mac">
+        <a>
+          Agregar a Carrito<i class="fas fa-shopping-cart"></i>
+        </a>
+      </button>
+    </div>
+  </div>`}
+  console.log(response, status)
+  console.log(productosMeli)
+      
+  
+  $("#producto").html(card);
+    }
+  )
+}
+
+// animaciones jquery
+
+$(".buttonFinalizar").click(function(){
+  $("#productos").fadeOut("slow");
+}); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // function mostrarTotal(){
@@ -247,4 +356,3 @@ modalCarrito.addEventListener('click', (event)=>{
 //       break;
 //   }
 // }
-}
