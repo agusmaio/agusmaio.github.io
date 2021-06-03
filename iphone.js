@@ -100,7 +100,7 @@ mostrarCardProductos()
   <h3 class="">
     ${productos[i].nombre} 
   </h3>
-  <h3 class="">${productos[i].precio}</h3>
+  <h3 class="">USD ${productos[i].precio}</h3>
   <div class="div-button-mac">
     <button onclick='agregarCarrito(${productos[i].id}, ${productos[i].precio}, ${productos[i].stock})' type="button" class="button-mac">
       <a>
@@ -238,15 +238,16 @@ function traerDatos(busqueda) {
   )
 }
 
+// SELECT PARA ELEGIR TIPO DE PUBLICACION DE ML TRAER (SOLO FUNCIONA EN IPHONE 11 PORQUE ES LA UNICA PUBLICACION DE FUNDAS EN MERCADOLIBRE QUE TENGO)
 $("#select-fundas").on("change", () => {
   const selectFundas = document.getElementById("select-fundas")
   traerDatos(selectFundas.value)
   })
 
-// ANIMACIONES JQUERY
+// BOTON FINALIZAR COMPRA FUERA DE CARRITO CON JQUERY
 $(".buttonFinalizar").click(function(){
-  $("#productos").fadeOut("slow");
-}); 
+  finalizarCompra();
+  }); 
 
 
 // API MercadoPago (TEST)
@@ -264,80 +265,15 @@ const finalizarCompra = async () => {
 
   const resp = await fetch("https://api.mercadopago.com/checkout/preferences", 
   {
-   method: "POST",
-   headers: {
+    method: "POST",
+    headers: {
     Authorization: "Bearer TEST-767183842520409-060317-f833747b2d826bf96d6776e67a9f0bff-568872399"
-   },
-   body: JSON.stringify({
+    },
+    body: JSON.stringify({
     items: carritoAPagar
-   })
+    })
   })
 
   const data = await resp.json()
   window.open(data.init_point, "_blank")
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function mostrarTotal(){
-//   console.log(carrito.reduce((acc, el) => acc += el.precio, 0))
-// }
-
-// function agregarCarrito(precio, stock, id) {
-//   let hayStock = validacionStock(stock);
-//   if (hayStock) {
-//     totalCarrito = totalCarrito + precio;
-//     console.log(`Agregaste producto al carrito. El total es: ${totalCarrito}`);
-//     console.log(
-//       `El precio final con IVA incluido es: ${sumarIva(totalCarrito)}`
-//     );
-//     console.log(`El producto agregado es: ${id}`)
-//   }
-// }
-// function validacionStock(stock) {
-//   if (stock > 0) {
-//     alert("Tenemos stock");
-//     return true;
-//   } else {
-//     alert("No tenemos stock suficiente de este producto");
-//     return false;
-//   }
-// }
-// function sumarIva(totalCarrito) {
-//   return totalCarrito * 1.21;
-// }
-
-// function calcularCuotas() {
-//   let cuotas = prompt("Selecciones cuotas (1,3,6,12)");
-//   switch (cuotas) {
-//     case "1":
-//       console.log("la cuota es:" + sumarIva(totalCarrito) / 1);
-//       break;
-//     case "3":
-//       console.log("la cuota es:" + sumarIva(totalCarrito) / 3);
-//       break;
-//     case "6":
-//       console.log("la cuota es:" + sumarIva(totalCarrito) / 6);
-//       break;
-//     case "12":
-//       console.log("la cuota es:" + sumarIva(totalCarrito) / 12);
-//       break;
-//     default:
-//       alert("No hay plan disponible");
-//       break;
-//   }
-// }
