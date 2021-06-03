@@ -77,56 +77,22 @@
   let totalCarrito = 0;
   let precio = 0;
   let stock = 0;
+  let baseDeDatosProductos = []
 
-  const baseDeDatosProductos = [
-    {
-      id: 1,
-      nombre: "iPhone 12 Pro",
-      precio: 1200,
-      imagen: "Imagenes/iphone12pro.jpg",
-      stock: "2",
-    },
-    {
-      id: 2,
-      nombre: "iPhone 12 Pro",
-      precio: 1200,
-      imagen: "Imagenes/iphone12pro-plata.jpg",
-      stock: "2",
-    },
-    {
-      id: 3,
-      nombre: "iPhone 12",
-      precio: 1000,
-      imagen: "Imagenes/iphone12-azul.jpg",
-      stock: "2",
-    },
-    {
-      id: 4,
-      nombre: "iPhone 12",
-      precio: 1000,
-      imagen: "Imagenes/iphone12-lima.png",
-      stock: "0",
-    },
-    {
-      id: 5,
-      nombre: "iPhone 11",
-      precio: 750,
-      imagen: "Imagenes/iphone11.png",
-      stock: "2",
-    },
-    {
-      id: 6,
-      nombre: "iPhone SE",
-      precio: 550,
-      imagen: "Imagenes/iphone-se.jpg",
-      stock: "2",
-    },
-  ]
-  
+//USO JSON COMO BASE DE DATOS 
+const mostrarCardProductos = async () => {
+    const resp = await fetch('./stockProductos.json')
+    const data = await resp.json()
+
+    baseDeDatosProductos = data
+    mostrarProductos(baseDeDatosProductos)
+}
+mostrarCardProductos()
+
+//GENERAR CARD DINAMICAS 
   let acumulador = ``;
 
-  mostrarProductos(baseDeDatosProductos);
-  function mostrarProductos(productos) {
+    function mostrarProductos(productos) {
     let acumulador = "";
     for (let i = 0; i < productos.length; i++) {
       acumulador += `<div class="vendidos-1 vendidos-mac">
@@ -143,14 +109,11 @@
     </button>
   </div>
 </div>`}
-    
-
 document.getElementById("productos").innerHTML = acumulador;
 
 
-  //funcion para filtro por nombre.
-  
-  function filtrar() {
+  //FILTRO POR NOMBRE (SELECT)
+    function filtrar() {
     const selectFiltro = document.getElementById("select-model");
     let valorFiltro = selectFiltro.value;
     let productosFiltrados = []
@@ -158,25 +121,17 @@ document.getElementById("productos").innerHTML = acumulador;
       productosFiltrados = baseDeDatosProductos
     }
     else{
-     productosFiltrados = baseDeDatosProductos.filter((el) => el.nombre == selectFiltro.value)
+      productosFiltrados = baseDeDatosProductos.filter((el) => el.nombre == selectFiltro.value)
     }
-   mostrarProductos(productosFiltrados)
-   }
+    mostrarProductos(productosFiltrados)
+    }
   $("#select-model").on("change", () => {
     filtrar()
   })
-  // selectFiltro.addEventListener("change", () => {
-  //   filtrar();
-  // })
 }
 
 
-$("#select-fundas").on("change", () => {
-  const selectFundas = document.getElementById("select-fundas")
-  traerDatos(selectFundas.value)
-  })
-
-//funcion para agregado de carrito
+//AGREGADO DE PRODUCTOS AL CARRITO
 function agregarCarrito(id) {
   let productoElegido = baseDeDatosProductos.find((el) => el.id == id);
   carrito.push(productoElegido);
@@ -188,7 +143,7 @@ function agregarCarrito(id) {
   actualizarCarrito()
 }
 
-//Para eliminar de modal carrito
+//ELIMINAR PRODUCTOS DEL MODAL CARRITO
 function eliminarProducto(id){
   let productoAEliminar = carrito.find (el => el.id == id)
   let indice = carrito.indexOf(productoAEliminar)
@@ -198,7 +153,7 @@ function eliminarProducto(id){
   actualizarCarrito()
 }
 
-//Para actualizar de modal carrito
+//ACTUALIZAR EL MODAL CARRITO
 function actualizarCarrito() {
   contenedorCarrito.innerHTML= ``
 
@@ -218,7 +173,7 @@ function actualizarCarrito() {
 
 }
 
-//Modal carrito
+//MODAL CARRITO
 const contenedorModal = document.getElementsByClassName('modal-contenedor')[0] //cero porque devuelve arrays entonces el primero es cero
 const contenedorCarrito = document.getElementById('carrito-contenedor')
 const botonAbrir = document.getElementById('boton-carrito')
@@ -242,7 +197,7 @@ modalCarrito.addEventListener('click', (event)=>{
   event.stopPropagation()
 })
 
-
+// API MERCADO LIBRE (TRAER PUBLICACIONES CON MI ID DE ML)
 function traerDatos(busqueda) {
   $.get(
     "https://api.mercadolibre.com/sites/MLA/search?seller_id=568872399&q="+busqueda,
@@ -283,14 +238,44 @@ function traerDatos(busqueda) {
   )
 }
 
-// animaciones jquery
+$("#select-fundas").on("change", () => {
+  const selectFundas = document.getElementById("select-fundas")
+  traerDatos(selectFundas.value)
+  })
 
+// ANIMACIONES JQUERY
 $(".buttonFinalizar").click(function(){
   $("#productos").fadeOut("slow");
 }); 
 
 
+// API MercadoPago (TEST)
+const finalizarCompra = async () => {
 
+  const carritoAPagar = carrito.map(el => ({
+      title: el.nombre,
+      description: "",
+      picture_url: el.imagen,
+      category_id: el.id,
+      quantity: el.stock,
+      currency_id: "ARS",
+      unit_price: el.precio
+  }))
+
+  const resp = await fetch("https://api.mercadopago.com/checkout/preferences", 
+  {
+   method: "POST",
+   headers: {
+    Authorization: "Bearer TEST-767183842520409-060317-f833747b2d826bf96d6776e67a9f0bff-568872399"
+   },
+   body: JSON.stringify({
+    items: carritoAPagar
+   })
+  })
+
+  const data = await resp.json()
+  window.open(data.init_point, "_blank")
+}
 
 
 
@@ -320,7 +305,7 @@ $(".buttonFinalizar").click(function(){
 //     console.log(
 //       `El precio final con IVA incluido es: ${sumarIva(totalCarrito)}`
 //     );
-//     // console.log(`El producto agregado es: ${id}`)
+//     console.log(`El producto agregado es: ${id}`)
 //   }
 // }
 // function validacionStock(stock) {

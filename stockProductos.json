@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "nombre": "iPhone 12 Pro",
+        "precio": 1200,
+        "imagen": "Imagenes/iphone12pro.jpg",
+        "stock": 2
+      },
+      {
+        "id": 2,
+        "nombre": "iPhone 12 Pro",
+        "precio": 1200,
+        "imagen": "Imagenes/iphone12pro-plata.jpg",
+        "stock": 2
+      },
+      {
+        "id": 3,
+        "nombre": "iPhone 12",
+        "precio": 1000,
+        "imagen": "Imagenes/iphone12-azul.jpg",
+        "stock": 2
+      },
+      {
+        "id": 4,
+        "nombre": "iPhone 12",
+        "precio": 1000,
+        "imagen": "Imagenes/iphone12-lima.png",
+        "stock": 5
+      },
+      {
+        "id": 5,
+        "nombre": "iPhone 11",
+        "precio": 750,
+        "imagen": "Imagenes/iphone11.png",
+        "stock":2
+      },
+      {
+        "id": 6,
+        "nombre": "iPhone SE",
+        "precio": 550,
+        "imagen": "Imagenes/iphone-se.jpg",
+        "stock": 2
+      }
+]
